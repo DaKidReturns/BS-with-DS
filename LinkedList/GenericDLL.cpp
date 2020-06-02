@@ -1,6 +1,5 @@
 #include<iostream>
-#include<exception>
-#include <stdexcept>
+#include<string>
 
 template <typename E> class DLinkedList;
 
@@ -54,8 +53,8 @@ DLinkedList<E>::DLinkedList(){
     trailer = new DNode<E>;
     header->next = trailer;
     trailer->prev = header;
-    header->prev = NULL;
-    trailer->next = NULL;
+    header->prev = nullptr;
+    trailer->next = nullptr;
     number_of_Nodes = 0;
 }
 
@@ -119,6 +118,7 @@ void DLinkedList<E>::removeFront(){
     DNode<E>* temp=header->next;
     header->next->next->prev=header;
     header->next = header->next->next;
+    --number_of_Nodes;
     delete temp;
 }
 
@@ -128,6 +128,7 @@ void DLinkedList<E>::removeBack(){
     DNode<E>* temp=trailer->prev;
     trailer->prev->prev->next = trailer;
     trailer->prev = trailer->prev->prev;
+    --number_of_Nodes;
     delete temp;
 }
 
@@ -138,16 +139,15 @@ unsigned int DLinkedList<E>::size(){return number_of_Nodes;}
 
 int main(){
     DLinkedList<int> l;
-    int a=34;
+    int a=23;
     l.addFront(a);
-    a=55;
+    a=45;
     l.addBack(a);
     a = l.front();
-    a++;
+    a=56;
     std::cout<<"Element at front = "<<l.front()<<'\n';
-    
     std::cout<<"Element at back = "<<l.back()<<'\n';
-    a=65;
+    a=33;
     l.addBack(a);
     std::cout<<"Element at back = "<<l.back()<<'\n';
     l.removeBack();

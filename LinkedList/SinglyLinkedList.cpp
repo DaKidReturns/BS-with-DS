@@ -40,10 +40,7 @@ bool LinkedList::empty() const {
 }
 
 const std::string& LinkedList::front()const{
-	if(!empty()){
 		return head->elem;
-   
-    }
 }
 
 void LinkedList::addFront(const std::string& e){

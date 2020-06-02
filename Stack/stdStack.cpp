@@ -1,6 +1,7 @@
 #include<cstdio>
 #include<stack>
 
+
 int main(){
     std::stack<int> mystack;
     int ch;
@@ -19,8 +20,6 @@ int main(){
             case 1:printf("\nEnter the element to be inserted "); 
                    scanf("%d",&elem);
                    mystack.push(elem);
-                   RUN = false;
-                   printf("%d",mystack.top());
                    break;
             case 2:printf("Element poped is = %d\n",mystack.top());
                    mystack.pop();
@@ -32,7 +31,12 @@ int main(){
                         printf("Stack ain't empty\n");   
                    }
                    break;
-            case 4:;
+            case 4:printf("The element at the top is %d\n",mystack.top());
+                   break;
+            case 5:RUN = false;
         }
+    printf("\n");
     }
+    printf("\n*********EXITING***********\n");
+
 }
