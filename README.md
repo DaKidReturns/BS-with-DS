@@ -3,6 +3,5 @@
 Date:06-06-2020<br>
 Day:Saturday<br>
 Changes<br>
--------------
-Added MergeSort(flawed)<br>
-It can sort every element except the last one :-<<br>
+> Added MergeSort(flawed)<br>
+> It can sort every element except the last one :-<<br>
