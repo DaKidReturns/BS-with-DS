@@ -1,4 +1,4 @@
-<h1> My Journy towards Data Strucures and Algorithms<h1>
+<h1> My Journy towards Data Strucures and Algorithms<\h1>
 
 Date:06-06-2020<br>
 Day:Saturday<br>
