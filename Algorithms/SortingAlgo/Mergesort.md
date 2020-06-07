@@ -15,6 +15,11 @@ Array2: [2,3,6,7]
 
 Array3: [1,2,3,4,5,6,7,7]
 
+So if we can split an array to arrays till there are N arrays (N being the number of items in the 
+array) we can merge sort two at a time till we get a single sorted array.
+
+That is exactly what merge sort does!!! 
+
 So to sort an array like [2,4,1,5,3,8] we can divide the array into smaller parts and sort 
 those parts one by one
 
