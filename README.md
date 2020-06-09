@@ -1,5 +1,13 @@
 <h1> My Journy towards Data Strucures and Algorithms</h1>
 
+Date:09-06-2020<br>
+Day:Tuesday<br>
+Changes<br>
+> Figured out heap sort<br>
+> Added MaxHeap and Minheap but not completed<br>
+> Added a completed Heapsort<br>
+
+
 Date:07-06-2020<br>
 Day:Sunday<br>
 Changes<br>
