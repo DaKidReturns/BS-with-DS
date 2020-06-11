@@ -13,7 +13,7 @@ class MaxHeap{
         MaxHeap();
         int findMax() const;
         int extractMax();
-        void insert(int& a); 
+        void insert(const int& a); 
         const bool isEmpty() const;
         void printHeap() const;
 };
@@ -24,7 +24,7 @@ void MaxHeap::swap(int i,int j){
 }
 
 void MaxHeap::maxHeapify(int i){
-    //assumes that the children are max heaps
+    //assumes that the children are Max heaps
     //check if the parent is less than the child
     //if not swap the  parent with the  child
     int leftChild,rightChild,largest;
@@ -40,7 +40,7 @@ void MaxHeap::maxHeapify(int i){
         //if the largest is not the parent than one of the child is larger
         //than the parent then you have to swap them
         swap(i,largest);
-        //After swapping them check if the child node is still a min heap
+        //After swapping them check if the child node is still a Max heap
         maxHeapify(largest);
     }
     
@@ -52,7 +52,7 @@ void MaxHeap::buildMaxHeap(){
    //root of a heap is the first element i=0
    //left child is 2*i+1 and the right child is 2*i+2
    //for i from n/2 till 0 run  heapify (arr, i )
-   //While calling heapify i is the root of the nearly complete binary tree to min heaped
+   //While calling heapify i is the root of the nearly complete binary tree to Max heaped
     for(int i=size/2-1;i>=0;i--) 
            maxHeapify(i);
 }
@@ -71,7 +71,7 @@ void MaxHeap::printHeap() const{
     std::cout<<'\n';
 }
 
-void MaxHeap::insert(int& a){
+void MaxHeap::insert(const int& a){
     arr.push_back(a);
     size++;
     buildMaxHeap();
