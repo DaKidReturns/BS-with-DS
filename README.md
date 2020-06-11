@@ -1,5 +1,12 @@
 <h1> My Journy towards Data Strucures and Algorithms</h1>
 
+Date:11-06-2020<br>
+Day:Thursday<br>
+Changes<br>
+> Added relevent functions for Min Heap and Max Heap<br>
+> Modified the files for heapsort and heaps (added proper references etc.)<br>
+> Cleaned The comments for the heaps<br>
+
 Date:09-06-2020<br>
 Day:Tuesday<br>
 Changes<br>
