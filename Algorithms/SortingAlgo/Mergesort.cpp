@@ -53,6 +53,8 @@ void fingerThing(std::vector<int>& arr ,int begin,int mid,int last){
 
 
 int main(){
+    std::cout<<"\nMerge Sort Implementation \n";
+    std::cout<<
     std::vector<int> spy({7,4,3,8,0,2,4,3,2});   
     for(auto it=spy.begin();it!=spy.end();++it){
         std::cout<<*it<<' '; 
