@@ -1,4 +1,4 @@
 *.out
 *.swp
 *.py
-./BinarySearchTrees/*
+BinarySearchTrees/*
