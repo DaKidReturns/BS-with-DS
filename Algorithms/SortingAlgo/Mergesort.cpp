@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 int ITERCOUNT = 0;
-void fingerThing(std::vector<int>& arr,int last,int begin,int mid);
+void fingerThing(std::vector<int>& arr,int begin,int mid,int last);
 void mergeSort(std::vector<int>& arr,int begin, int last,bool printArray = false){ 
     //std::cout<<"In merge sort"<<'\n';
     int mid; 
@@ -43,6 +43,9 @@ void fingerThing(std::vector<int>& arr ,int begin,int mid,int last){
     }
     while(b<=mid){temp.push_back(arr[b++]);}
     while(c<=last){temp.push_back(arr[c++]);}
+    for(int i=0;i<temp.size();++i){
+        arr[begin+i]=temp[i];
+    }
     return;
 }
 
@@ -57,7 +60,10 @@ int main(){
     std::cout<<"Enter the number of elements in the array\n";
     std::cin>>n;
     std::cout<<"Enter the elements in the array\n";    
-    a = readE
+    for(int i =0;i<n;i++){
+        std::cin>>a;
+        spy.push_back(a);
+    }
     std::cout<<'\n';
     std::cout<<"Do you want to print each iteration of the Merge Sort? (y/n) ";
     std::cin>>input;
@@ -66,9 +72,11 @@ int main(){
     }
     if(input == 'y'|| input == 'Y')printArray = true;
     else printArray = false;
+    std::cout<<'\n';
    mergeSort(spy,0,spy.size()-1,printArray);
     for(auto it=spy.begin();it!=spy.end();++it){
         std::cout<<*it<<' ';
     }
+    std::cout<<'\n';
     return 0;
     }
