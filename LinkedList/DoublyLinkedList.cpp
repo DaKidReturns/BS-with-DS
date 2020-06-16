@@ -9,6 +9,7 @@ class Dnode{
 	 friend class DLinkedList;	
 };
 
+
 class DLinkedList{
 	private:
 		Dnode* header;
@@ -23,10 +24,59 @@ class DLinkedList{
 		void addBack(const std::string&);
 		void removeFront();
 		void removeBack();
+        class Iterator;
+        Iterator begin();
+        Iterator end();
 	protected:
 		void add(Dnode*, const std::string);
 		void remove(Dnode*);
 };
+
+class DLinkedList::Iterator{
+    private:
+        Dnode* v;
+        Iterator(Dnode* u);
+    public:
+        std::string& operator*();
+        bool operator==(const Iterator& p ) const;
+        bool operator!=(const Iterator& p) const;
+        Iterator& operator++();
+        Iterator& operator--();
+        friend class DLinkedList;
+};
+
+DLinkedList::Iterator::Iterator(Dnode* u){v =u;}
+
+std::string& DLinkedList::Iterator::operator*(){
+    return v->elem;
+}
+
+bool DLinkedList::Iterator::operator==(const Iterator& p) const{
+    return v==p.v;
+}
+
+bool DLinkedList::Iterator::operator!=(const Iterator& p) const{
+    return v!=p.v;
+}
+
+
+DLinkedList::Iterator& DLinkedList::Iterator::operator++(){
+    v=v->next;
+    return *this;
+}
+
+DLinkedList::Iterator& DLinkedList::Iterator::operator--(){
+    v = v->next;
+    return *this;
+}
+
+DLinkedList::Iterator DLinkedList::begin(){
+    return Iterator(header->next);
+}
+
+DLinkedList::Iterator DLinkedList::end(){
+    return Iterator(trailer);
+}
 
 DLinkedList::DLinkedList(){
 	header = new Dnode;
@@ -104,5 +154,13 @@ void listReversal(DLinkedList& L){
 }
 int main(){
 	std::cout<<"Doubly Linked List impleentation\n";
+    DLinkedList d;
+    d.addFront("Rohit");
+    d.addFront("Karunakaran");
+    DLinkedList::Iterator it = d.begin();
+    for(;it!=d.end();++it){
+        std::cout<<*it<<" ";
+    }
+    std::cout<<std::endl;
 	return 0;
 }
