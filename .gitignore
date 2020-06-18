@@ -1,9 +1,0 @@
-*.out
-*.swp
-*.py
-BinarySearchTrees/*
-*.o
-Array/
-ArraysC++/
-recursion/
-.gitignore
