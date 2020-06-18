@@ -1,29 +1,24 @@
-<h1> My Journy towards Data Strucures and Algorithms</h1>
+Data Structure and Algorithms
+=============================
 
-Date:11-06-2020<br>
-Day:Thursday<br>
-Changes<br>
-> Added relevent functions for Min Heap and Max Heap<br>
-> Modified the files for heapsort and heaps (added proper references etc.)<br>
-> Cleaned The comments for the heaps<br>
-
-Date:09-06-2020<br>
-Day:Tuesday<br>
-Changes<br>
-> Figured out heap sort<br>
-> Added MaxHeap and Minheap but not completed<br>
-> Added a completed Heapsort<br>
-
-
-Date:07-06-2020<br>
-Day:Sunday<br>
-Changes<br>
-> Fixed MergeSort (YEAH!!)<br>
-> Added a nice markdown file to help get started with merge sort<br>
+Here is a brief summary of what is in this repository.  
+I have made implemented some o basic Data Stucutres in C++  
+1. [x] [Linked Lists](https://github.com/DaKidReturns/BS-with-DS/tree/master/LinkedList)  
+2. [x] [Queues](https://github.com/DaKidReturns/BS-with-DS/tree/master/Queue)
+3. [x] [Stacks](https://github.com/DaKidReturns/BS-with-DS/tree/master/Stack)
+4. [x] [Dequeues](https://github.com/DaKidReturns/BS-with-DS/tree/master/Queue/Dequeue)
+5. [x] [Heaps](https://github.com/DaKidReturns/BS-with-DS/tree/master/Heaps)
+6. [ ] [Priority Queues]()
+7. [ ] [Trees]()
+8. [ ] [Binary Trees]()
+9. [ ] [Hash Tables]()
+10. [ ] [Binary Search Trees]()
+11. [ ] [AVL Trees]()
 
 
-Date:06-06-2020<br>
-Day:Saturday<br>
-Changes<br>
-> Added MergeSort(flawed)<br>
-> It can sort every element except the last one :-<<br>
+Here is the list and linkes to some of the Algorithms implemented
+1. [x] [MergeSort](https://github.com/DaKidReturns/BS-with-DS/tree/master/Algorithms/SortingAlgo)
+2. [x] [HeapSort](https://github.com/DaKidReturns/BS-with-DS/tree/master/Algorithms/SortingAlgo)
+3. [ ] [QuickSort]()
+4. [ ] [Huffman Encoding and Decoding]()
+5. [ ] [Radix sorting]()
