@@ -72,7 +72,7 @@ void CLinkedList::remove(){
     }
 }
 
-void CLinkedList::reverse(){ //Uses high space
+void CLinkedList::reverse(){ 
     if(this->empty()||cursor->next==cursor){
         return;
     }
