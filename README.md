@@ -17,8 +17,8 @@ I have made implemented some o basic Data Stucutres in C++
 
 
 Here is the list and linkes to some of the Algorithms implemented
-1. [x] [MergeSort](https://github.com/DaKidReturns/BS-with-DS/tree/master/Algorithms/SortingAlgo)
-2. [x] [HeapSort](https://github.com/DaKidReturns/BS-with-DS/tree/master/Algorithms/SortingAlgo)
+1. [x] [MergeSort](https://github.com/DaKidReturns/BS-with-DS/tree/master/Algorithms/SortingAlgo/MergeSort)
+2. [x] [HeapSort](https://github.com/DaKidReturns/BS-with-DS/tree/master/Algorithms/SortingAlgo/HeapSort)
 3. [ ] [QuickSort]()
 4. [ ] [Huffman Encoding and Decoding]()
-5. [ ] [Radix sorting]()
+5. [x] [Radix sorting](https://github.com/DaKidReturns/BS-with-DS/tree/master/Algorithms/SortingAlgo/RadixSort)
