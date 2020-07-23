@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<cstring>
 
 typedef std::vector<int>::iterator Iterator;
 typedef std::vector<int>::const_iterator ConstIterator;
@@ -13,6 +14,7 @@ void reciveArray(std::vector<int> &a){
     for(i = 0;i<n;i++){
         std::cin>>a[i];
     }
+    std::cout<<std::endl;
 }
 
 void printVector(const std::vector<int> &a){
@@ -22,7 +24,7 @@ void printVector(const std::vector<int> &a){
     std::cout<<std::endl;
 }
 
-void countingSort(std::vector<int> &a,std::vector<int> &b,int p,bool printSteps){
+void countingSort(std::vector<int> &a,int p,bool printSteps){
     //Here p is the place value of the MSD in the
     
     int len = a.size();
@@ -31,25 +33,12 @@ void countingSort(std::vector<int> &a,std::vector<int> &b,int p,bool printSteps)
     std::vector<int> c;
     std::vector<int> d;
     
-    int base=10;
-    
-    c.resize(base);d.resize(len);
+    c.resize(10);
+    d.resize(len);
     
     //assume that the value of k is 10
     for(i = 0;i<len;++i){
-        d[i] = a[i]%(p*base);
-        d[i]/=p;
-    }
-    
-    if(printSteps){ 
-        std::cout<<"The place value array d is ";
-        printVector(d);
-    }
-
-    
-    //now for the counting the number of digits
-    for(i=0;i<len;i++){
-        c[d[i]]+=1;
+        c[(a[i]%p)/(p/10)]++;
     }
     
     if(printSteps){
@@ -71,28 +60,24 @@ void countingSort(std::vector<int> &a,std::vector<int> &b,int p,bool printSteps)
     
     //Sorting the vector b
     for(i=len-1;i>=0;--i){
-        b[c[d[i]]-1] = a[i];
-        c[d[i]]-=1;
+        d[c[(a[i]%p)/(p/10)]-1] = a[i];
+        c[(a[i]%p)/(p/10)]--;
         if(printSteps){
             std::cout<<"Array b after the " <<len-i<<" iteration = ";
-            printVector(b);
+            printVector(d);
         }
     }
+    a=d;
     
 }
 
 void radixSort(std::vector<int> &a,bool printSteps){
-    std::vector<int> b;
-    
     int largest = a[0];
     int i;
-    int p =1;
+    int p =10; //Our base
     int len;
-    
-
 
     len = a.size();
-    b.resize(len);
     for(i = 1; i<len ;++i){
         if(a[i]>largest){
             largest = a[i];
@@ -100,14 +85,13 @@ void radixSort(std::vector<int> &a,bool printSteps){
     }
 
     while(largest>0){
-        countingSort(a,b,p,printSteps);
+        countingSort(a,p,printSteps);
         
         //std::cout<<"Array b is: ";
         //printVector(b);
 
         p*=10;
         largest/=10;
-        a = b;
         if(printSteps)
             std::cout<<std::endl<<std::endl;
     }
@@ -140,7 +124,7 @@ int main(int args,char* argv[]){
         }
     }
     else{
-        if(argv[1] == "print"){
+        if(!strcmp(argv[1],"print")){
             print = true;
         }
         else{
