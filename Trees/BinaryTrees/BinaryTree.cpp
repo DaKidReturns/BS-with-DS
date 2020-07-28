@@ -1,86 +1,76 @@
 #include<iostream>
 #include<vector>
 
-template<typename E> class BinaryTree;
-template<typename E> class BinaryTreeNode;
-
-
-template<typename E>
 class BinaryTreeNode{
     private:
         //Set the private elements
-        E elem;
+        int elem;
         BinaryTreeNode *leftChild;
         BinaryTreeNode *rightChild;
         BinaryTreeNode *parent;
 
     public:
         //Getters
-        E& getElem(){ return this->elem; }
-        BinaryTreeNode<E>* getLeftChild() const { return this->leftChild; }
-        BinaryTreeNode<E>* getRightChild() const { return this->rightchild; }
-        BinaryTreeNode<E>* getParent() const { return this->parent; }
+        int& getElem(){ return this->elem; }
+        BinaryTreeNode* getLeftChild() const { return this->leftChild; }
+        BinaryTreeNode* getRightChild() const { return this->rightChild; }
+        BinaryTreeNode* getParent() const { return this->parent; }
         
         //Setters
-        void setElem(E& e){ this->elem = e; }
-        void setLeftChild(BinaryTreeNode<E>* a){ this->leftChild = a; }
-        void setRightChild(BinaryTreeNode<E>* a){ this->rightChild = a; }
-        void setParent(BinaryTreeNode<E>* a){ this->parent = a; }
+        void setElem(int& e){ this->elem = e; }
+        void setLeftChild(BinaryTreeNode* a){ this->leftChild = a; }
+        void setRightChild(BinaryTreeNode* a){ this->rightChild = a; }
+        void setParent(BinaryTreeNode* a){ this->parent = a; }
 };
 
 
-template<typename E>
 class BinaryTree{
     private:
-        BinaryTreeNode<E> *root;
+        BinaryTreeNode  *root;
         void addRoot();
-        void expandExternal(const BinaryTreeNode<E>&); //Transfrom the external Binary tree node into an internal node by adding two nodes
+        void expandExternal(const BinaryTreeNode&); //Transfrom the external Binary tree node into an internal node by adding two nodes
         int n;
     public:
-        //class BinaryTreeNode<E>;
+        //class BinaryTreeNode ;
         BinaryTree();
-        typedef std::vector<BinaryTreeNode<E>> NodeList; 
+        typedef std::vector<BinaryTreeNode> NodeList; 
         int size() const;
         bool empty() const;
-        BinaryTreeNode<E> getRoot() const;
-        BinaryTreeNode<E> removeAboveExternal(const BinaryTreeNode<E>&);
-        void preorder(BinaryTreeNode<E>& a,NodeList& nl);
+        BinaryTreeNode getRoot() const;
+        BinaryTreeNode removeAboveExternal(const BinaryTreeNode* );
+        void preorder(BinaryTreeNode & a,NodeList& nl);
         NodeList positions() const;
+        void insert(const int&);
         ~BinaryTree();
         
 };
 
 
-template<typename E>
-BinaryTree<E>::BinaryTree(){
+BinaryTree ::BinaryTree(){
     root=NULL;
     n=0;
 }
 
-template<typename E>
-int BinaryTree<E>::size() const {
+int BinaryTree ::size() const {
     return n;
 }
 
-template<typename E>
-bool BinaryTree<E>::empty() const{  
+bool BinaryTree ::empty() const{  
     //Returns true if the tree is empty
     if(root!=NULL)
         return true;
     return false;
 }
 
-template<typename E>
-BinaryTreeNode<E> BinaryTree<E>::getRoot()const {
+BinaryTreeNode  BinaryTree ::getRoot()const {
     return *root;
 }
 
-template<typename E>
-void BinaryTree<E>::expandExternal(const BinaryTreeNode<E>& p){
+void BinaryTree ::expandExternal(const BinaryTreeNode* p){
     //Transform p(an external node) into an internal node, 
     //By creating two external nodes for p
-    BinaryTreeNode<E> *newLeft = new BinaryTreeNode<E>;
-    BinaryTreeNode<E> *newRight = new BinaryTreeNode<E>;
+    BinaryTreeNode  *newLeft = new BinaryTreeNode ;
+    BinaryTreeNode  *newRight = new BinaryTreeNode ;
     newLeft->setParent(p);
     newRight->setParent(p);
     p->setLeftChild(newLeft);
@@ -88,16 +78,15 @@ void BinaryTree<E>::expandExternal(const BinaryTreeNode<E>& p){
     n+=2;
 }
 
-template<typename E>
-BinaryTreeNode<E> BinaryTree<E>::removeAboveExternal(const BinaryTreeNode<E>& w){
+BinaryTreeNode  BinaryTree ::removeAboveExternal(const BinaryTreeNode* w){
     //assume that a node w which is an external node with parent p(hence not a root)
     //if p is a root removing w and the parent p will cause w's sibling to becomen the
     //new root. 
     //if p is not a root then removing w and p will make the sibling of w the chiled of 
     //p's parent, i.e the grandparent of the sibling becomes it's parent
 
-    BinaryTreeNode<E>* p = w->getParent();
-    BinaryTreeNode<E>* sibling;
+    BinaryTreeNode* p = w->getParent();
+    BinaryTreeNode* sibling;
     
     //set the value of the sibling node
     if(w == p->getLeftChild()){
@@ -111,7 +100,7 @@ BinaryTreeNode<E> BinaryTree<E>::removeAboveExternal(const BinaryTreeNode<E>& w)
         root = sibling;
     }
     else{
-        BinaryTreeNode<E>* gpar = p->getParent();
+        BinaryTreeNode * gpar = p->getParent();
         //Make the sibling the child of the grandparent
         if(p == gpar->getRightChild()){
             gpar->setRightChild(sibling);
@@ -130,8 +119,7 @@ BinaryTreeNode<E> BinaryTree<E>::removeAboveExternal(const BinaryTreeNode<E>& w)
     return sibling;
 }
 
-template<typename E>
-void BinaryTree<E>::preorder(BinaryTreeNode<E>& a,NodeList& nl){
+void BinaryTree ::preorder(BinaryTreeNode* a,NodeList& nl){
     nl.push_back(a);
     if(a->getLeftChild()!=NULL){
         preorder(a->getLeftChild(),nl);
@@ -141,11 +129,10 @@ void BinaryTree<E>::preorder(BinaryTreeNode<E>& a,NodeList& nl){
     }
 }
 
-template<typename E>
-typename BinaryTree<E>::NodeList BinaryTree<E>::positions() const{
+BinaryTree ::NodeList BinaryTree ::positions() const{
     NodeList nl;
     preorder(getRoot(),nl);
     return nl;
 }
 
-
+void BinaryTree::insert(int)
