@@ -10,7 +10,7 @@ I have made implemented some o basic Data Stucutres in C++
 5. [x] [Heaps](https://github.com/DaKidReturns/BS-with-DS/tree/master/Heaps)
 6. [ ] [Priority Queues]()
 7. [ ] [Trees]()
-8. [ ] [Binary Trees]()
+8. [x] [Binary Trees]()
 9. [ ] [Hash Tables]()
 10. [ ] [Binary Search Trees]()
 11. [ ] [AVL Trees]()
