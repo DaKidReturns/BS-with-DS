@@ -11,7 +11,7 @@ I have made implemented some o basic Data Stucutres in C++
 6. [x] [Heaps](https://github.com/DaKidReturns/BS-with-DS/tree/master/Heaps)  
 7. [x] [Trees](https://github.com/DaKidReturns/BS-with-DS/tree/master/Trees/)  
 8. [x] [Binary Trees](https://github.com/DaKidReturns/BS-with-DS/tree/master/Trees/BinaryTrees)  
-9. [x] [Binary Search Trees](https://github.com/DaKidReturns/BS-with-DS/tree/master/BinarySearchTrees)  
+9. [x] [Binary Search Trees](https://github.com/DaKidReturns/BS-with-DS/tree/master/Trees/BinarySearchTrees)  
 10. [ ] [AVL Trees]()  
 11. [ ] [Hash Tables]()  
 

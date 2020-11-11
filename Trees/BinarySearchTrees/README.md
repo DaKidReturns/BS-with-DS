@@ -46,3 +46,8 @@ In this case you have to find the successor of the node or the smallest element 
 sub-tree and replace the node with the successor.
 
 ### Successor and Predecessor.
+Successor is the next greatest node to the current node.(The Rightmost node in the left sub tree)  
+Predecessor is the next smallest node to the current node(The Leftmost node in the right subtree)  
+
+### Height Of a Node  
+The Height of a node is the longest path to a leaf from the node.
